@@ -63,12 +63,12 @@ pipeline {
       }
     }
     stage("Trivy Scan") {
-    steps {
+      steps {
         script {
-            sh('docker run -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image nadmad1/register-app-pipeline:latest --no-progress --scanners vuln --exit-code 1 --severity HIGH,CRITICAL --format table')
+            sh('docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.cache/trivy:/root/.cache/ aquasec/trivy image nadmad1/register-app-pipeline:latest --no-progress --scanners vuln --exit-code 1 --severity HIGH,CRITICAL --format table')
         }
+      }
     }
-}
 
     stage('cleanup Artifacts') {
           steps {
