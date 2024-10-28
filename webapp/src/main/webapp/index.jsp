@@ -35,6 +35,6 @@
    <br>
    <h1> Happy Learning. See You Again. </h1>
    <h2> Nadeem Aslam </h2>
-   <h1> Best of Us </h1>
+   <h1> Best of Us. </h1>
    
 </form>
